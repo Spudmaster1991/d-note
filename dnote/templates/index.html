@@ -9,8 +9,11 @@
     <script type="application/javascript">var fingerprint = new Fingerprint().get();</script>
 {% endblock %}
 {% block content %}
+    <!-- Title block -->
     <h1>Self destructing encrypted notes</h1>
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
+    
+    <!-- For if we think you are a spammer -->
     <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
         {% if error %}
             <p class="error">
@@ -19,10 +22,13 @@
             {% endif %}
             </p>
         {% endif %}
+        <!-- Start of Input Box -->
         <input name="new_url" type="hidden" value="{{ random }}">
         <p>Type or paste your text below:</p>
+        <!-- The actual input box -->
         <textarea style="width:100%; height:250px" id="paste" name="paste"></textarea>
         <br/>
+        <!-- Passphrase to lock secret -->
         <div class="blockfirst">
             Enter optional passphrase / password:
             <span class="tooltip">
@@ -31,8 +37,10 @@
             </span>
             <br/>
             <input id="passphrase" type="text" name="pass" id="passphrase">
+            <!-- Generate the passphrase -->
             <input type="button" value="Generate One" onclick="document.getElementById('passphrase').value = make_key()">
         </div>
+        <!-- Dont be a scammer -->
         <div class="blocklast">
             <input type="hidden" id="hashcash" name="hashcash">
             <div id="submitButnHolder">
@@ -43,6 +51,53 @@
                 <span class="trigger">?</span>
                 <span class="popup">A puzzle is solved in your browser proving you are human. The puzzle should be solved in a few seconds at most depending on your hardware.</span>
             </span>
+        </div>
+        <!-- Table for passwrod generation options -->
+        <div>
+            <table>
+                <!-- Headers -->
+                <tr>
+                    <th></th>
+                    <th>Option</th>
+                    <th>Description</th>
+                    <th>Additional</th>
+                </tr>
+                <!-- Custom Generation -->
+                <tr>
+                    <td><input type="checkbox" id="cb_custom" label="Use custom generation."></td>
+                    <td><label for="cb_custom">Custom</label></td>
+                    <td><label>Use custom generation</label>
+                        <br> <label>w = Lowercase Word</label>
+                        <br> <label>z = Upper or Lowercase word</label>
+                        <br> <label>s = Seperator</label>
+                        <br> <label>n = Number</label>
+                        <br> <label>r = Random Charecter</label>
+                        <br> <label>S = Special Charecter</label>
+                        <br> <label>l = Lowercase Letter</label>
+                        <br> <label>L = Uppercase Letter</label>
+                        <br> <label>x = Upper or Lowercase Letter</label>
+
+                    </td>
+                    <td><input id="input_custom" type="text" placeholder="znsznszn" max="255" min="1"></td>                    
+                </tr>
+                <!-- Wordlist -->
+                <tr>
+                    <td><input type="checkbox" id="cb_wordlist" label="Use a wordlist."></td>
+                    <td><label for="cb_wordlist">Wordlist</label></td>
+                    <td><label>Use a wordlist</label></td>
+                    <td><input id="input_wordlist" type="number" placeholder="How many words?" max="16" min="1"></td>
+                </tr>
+                <!-- Seperators -->
+                <tr>
+                    <td><input type="checkbox" id="cb_seperators" label="Use a seperator."></td>
+                    <td><label for="cb_seperators">Seperators</label></td>
+                    <td><label>Use Seperators (- _ , * + : )</label></td>
+                    <td><input id="input_seperators" type="number" placeholder="Separate after how many charecters" max="255" min="1"></td>                    
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
         </div>
     </form>
 {% endblock %}
