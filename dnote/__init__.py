@@ -14,6 +14,17 @@ def index():
     note = Note()
     return render_template('index.html', random=note.url, error=error)
 
+@DNOTE.route('/api/', methods=['GET'])
+def api():
+    custom = request.args.get('custom')
+    wordlist = request.args.get('wordlist')
+    seperators = request.args.get('seperators')
+    customChar = request.args.get('customChar')
+    numbers = request.args.get('numbers')
+    specialChar = request.args.get('specialChar')
+    exclude = request.args.get('exclude')
+    return render_template('index.html')
+
 @DNOTE.route('/security/', methods=['GET'])
 def security():
     """Return the index.html for the security page."""
