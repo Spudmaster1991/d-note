@@ -147,6 +147,7 @@ function gen_pass() {
   var numbers = null;
   var specialChar = null;
   var exclude = null;
+  var charNumb = null;
 
   if (document.getElementById("cb_custom").checked == True) {
     custom = document.getElementById("input_custom").value;
@@ -161,23 +162,30 @@ function gen_pass() {
     customChar = document.getElementById("input_customchars").value;
   }
   if (document.getElementById("cb_numbers").checked == True) {
-    numbers = document.getElementById("input_numbers").value;
+    numbers = True;
   }
   if (document.getElementById("cb_special").checked == True) {
-    specialChar = document.getElementById("input_special").value;
+    specialChar = True;
   }
   if (document.getElementById("cb_exclude").checked == True) {
     exclude = document.getElementById("input_exclude").value;
   }
+  if (document.getElementById("cb_letters").checked == True) {
+    letters = True
+  }
+  if (document.getElementById("input_char_number").value != null){
+    charNumb = document.getElementById("input_char_number").value
+  }
   var api_url = "https://secrets.uvu.edu/api/?" +
-    custom != null ? "custom=" + custom + "&"
-    wordlist != null ? "wordlist=" + wordlist + "&"
-    seperators != null ? "seperators=" + seperators + "&"
-    customChar != null ? "customChar=" + customChar + "&"
-    numbers != null ? "numbers=" + numbers + "&"
-    specialChar != null ? "specialChar=" + specialChar + "&"
-    exclude != null ? "exclude=" + exclude;
-  
+    custom != null ? "custom=" + custom + "&": "custom=&" +
+    wordlist != null ? "wordlist=" + wordlist + "&": "wordlist=&" +
+    seperators != null ? "seperators=" + seperators + "&": "seperators=&" +
+    customChar != null ? "customChar=" + customChar + "&": "customChar=&" +
+    numbers == True ? "numbers=True&" : "numbers=False&" +
+    specialChar == True ? "specialChar=True&": "specialChar=False&" +
+    exclude != null ? "exclude=" + exclude : "exclude=&" +
+    letters == True ? "letters=True" : "letters=False&"
+    charNumber != null ? "charNumb=" + charNumber  : "charNumb=16"    
   $.get(api_url, function(data){
     document.getElementById("paste").value = document.getElementById("paste").value + data;
   });

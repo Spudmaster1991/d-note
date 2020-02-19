@@ -3,6 +3,7 @@ import os
 import utils
 from flask import Flask, render_template, request, redirect, url_for
 from note import Note
+import password_api.py
 
 DNOTE = Flask(__name__)
 HERE = DNOTE.root_path
@@ -23,7 +24,9 @@ def api():
     numbers = request.args.get('numbers')
     specialChar = request.args.get('specialChar')
     exclude = request.args.get('exclude')
-    return render_template('index.html')
+    letters = request.args.get('letters')
+    charNumb = request.args.get('charNumb')
+    return password_api.generatepass(custom, wordlist, seperators, customChar, numbers, specialChar, exclude, letters, charNumb)
 
 @DNOTE.route('/security/', methods=['GET'])
 def security():
