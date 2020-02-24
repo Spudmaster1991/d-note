@@ -45,21 +45,21 @@ def generatepass(custom, wordlist, seperators, customChar, numbers, specialChar,
             i=+1
             pass
         pass
-    elif wordlist == True & numbers == True & specialChar == True:
+    elif letters == True & numbers == True & specialChar == True:
         pass
-    elif wordlist == True & numbers == True & specialChar == False:
+    elif letters == True & numbers == True & specialChar == False:
         pass
-    elif wordlist == True & numbers == False & specialChar == True:
+    elif letters == True & numbers == False & specialChar == True:
         pass
-    elif wordlist == True & numbers == False & specialChar == False:
+    elif letters == True & numbers == False & specialChar == False:
         pass
-    elif wordlist == False & numbers == True & specialChar == True:
+    elif letters == False & numbers == True & specialChar == True:
         pass
-    elif wordlist == False & numbers == True & specialChar == False:
+    elif letters == False & numbers == True & specialChar == False:
         pass
-    elif wordlist == False & numbers == False & specialChar == True:
+    elif letters == False & numbers == False & specialChar == True:
         pass
-    elif wordlist == False & numbers == False & specialChar == False:
+    elif letters == False & numbers == False & specialChar == False:
         pass
     # wordlist = 'C:/Users/Anthony/Documents/GitHub/password_reset/static/agwordlist.txt'
     # count = len(open(wordlist).readlines(  ))
