@@ -24,6 +24,30 @@
     <link href="https://ais-linux6.uvu.edu/groups/css/bootstrap.css" type = "text/css" rel="stylesheet">
     <link href="https://ais-linux6.uvu.edu/groups/css/custom.css" type = "text/css" rel="stylesheet">
     <link href="https://ais-linux6.uvu.edu/groups/css/dataTables.bootstrap.min.css" type = "text/css" rel="stylesheet">
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
 </head>
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
@@ -69,11 +93,11 @@
     <h1>Self destructing encrypted notes</h1>
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
     <!-- Generate Password Button -->
-    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_pass()">Generate Password TEST</button>
+    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_pass()">Generate Password</button>
     <!-- Passwrod Setting Toggle -->
     <button id="btn_pass_settings_toggle" class="btn btn-success" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
     <div id="pass_settings" style="display: none;">
-        <table>
+        <table id="customers">
             <!-- Headers -->
             <tr>
                 <th></th>
