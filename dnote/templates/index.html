@@ -28,6 +28,8 @@
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
     
     <!-- For if we think you are a spammer -->
+    <button id="btn_generate_pass" onclick="generate_pass()">Generate Password</button>
+    <button id="btn_pass_settings_toggle" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
     <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
         {% if error %}
             <p class="error">
@@ -39,9 +41,7 @@
         <!-- Start of Input Box -->
         <input name="new_url" type="hidden" value="{{ random }}">
         <p>Type or paste your text below:</p>
-        <button id="btn_generate_pass" onclick="generate_pass()">Generate Password</button>
-        <button id="btn_pass_settings_toggle" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
-        <!-- The actual input box -->
+         <!-- The actual input box -->
         <textarea style="width:100%; height:250px" id="paste" name="paste"></textarea>
         <br/>
         <!-- Passphrase to lock secret -->
