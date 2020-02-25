@@ -19,6 +19,14 @@
         }
     }
 </script>
+<script>
+    function set_size(){
+        var input = document.querySelectorAll('input');
+        for(i=0; i<input.length; i++){
+            input[i].setAttribute('size',input[i].getAttribute('placeholder').length);
+        }
+    }
+</script>
 <head>
     <title>Flask app</title>
     <link href="{{ url_for('index') }}static/css/bootstrap.css" type = "text/css" rel="stylesheet">
@@ -139,7 +147,7 @@
     </div>
 
     <!-- Are you a bot? -->
-    <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
+    <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}" onload="set_size()">
         {% if error %}
             <p class="error">
             {% if error == "hashcash" %}
