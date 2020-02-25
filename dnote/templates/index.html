@@ -67,7 +67,7 @@
             </tr>
             <!-- Custom Generation -->
             <tr>
-                <td><input type="checkbox" id="cb_custom" label="Use custom generation."></td>
+                <td><input type="checkbox" id="cb_custom" label="Use custom generation." checked></td>
                 <td><label for="cb_custom">Custom</label></td>
                 <td><label>Use custom generation</label>
                     <br> <label>w = Upper or Lowercase Word</label>
@@ -77,7 +77,7 @@
                     <br> <label>S = Special Charecter</label>
                     <br> <label>L = Upper or Lowercase Letter</label>
                 </td>
-                <td><input id="input_custom" type="text" placeholder="znsznszn" max="255" min="1"></td>                    
+                <td><input id="input_custom" type="text" placeholder="wnswnswn" max="255" min="1" value="wnswnswn"></td>                    
             </tr>
             <!-- Wordlist -->
             <tr>
@@ -161,7 +161,7 @@
                 <span class="popup">This passphrase will encrypt and decrypt your note, rather than the one created by the server.</span>
             </span>
             <br/>
-            <input id="passphrase" type="text" name="pass" id="passphrase">
+            <input id="passphrase" type="text" name="pass" id="passphrase" value="uvu">
             <!-- Generate the passphrase -->
             <input type="button" class="btn btn-success" value="Generate One" onclick="document.getElementById('passphrase').value = make_key()">
         </div>
