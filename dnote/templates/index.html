@@ -27,7 +27,7 @@
     <!-- Title block -->
     <h1>Self destructing encrypted notes</h1>
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
-    
+
     <!-- For if we think you are a spammer -->
     <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
         {% if error %}
@@ -71,7 +71,7 @@
         </div>
         <!-- Table for passwrod generation options -->
 
-        <div id="pass_settings">
+        <div id="pass_settings" style="display: none;">
             <table>
                 <!-- Headers -->
                 <tr>
@@ -92,7 +92,7 @@
                         <br> <label>S = Special Charecter</label>
                         <br> <label>L = Upper or Lowercase Letter</label>
                     </td>
-                    <td><input id="input_custom" type="text" placeholder="znsznszn" max="255" min="1"></td>                    
+                    <td><input id="input_custom" type="text" placeholder="znsznszn" max="255" min="1"></td>
                 </tr>
                 <!-- Wordlist -->
                 <tr>
@@ -106,49 +106,49 @@
                     <td><input type="checkbox" id="cb_seperators" label="Use a seperator."></td>
                     <td><label for="cb_seperators">Seperators</label></td>
                     <td><label>Use Seperators (- _ , * + : )</label></td>
-                    <td><input id="input_seperators" type="number" placeholder="Separate after how many charecters/words" max="255" min="1"></td>                    
-                </tr> 
+                    <td><input id="input_seperators" type="number" placeholder="Separate after how many charecters/words" max="255" min="1"></td>
+                </tr>
                 <!-- Custom Character Set -->
                 <tr>
                     <td><input type="checkbox" id="cb_customchars" label="Use a custom character set."></td>
                     <td><label for="cb_customchars">Custom Character Set</label></td>
                     <td><label>Use A Custom Character Set</label></td>
-                    <td><input id="input_customchars" type="text" placeholder="AaBbCcDd12345!@#$%" max="94" min="1"></td>                    
+                    <td><input id="input_customchars" type="text" placeholder="AaBbCcDd12345!@#$%" max="94" min="1"></td>
                 </tr>
                 <!-- Letters -->
                 <tr>
                     <td><input type="checkbox" id="cb_letters" label="Use Letters."></td>
                     <td><label for="cb_letters">Letters</label></td>
                     <td><label>Use Letters</label></td>
-                    <td><label>Uppercase</label><input type="checkbox" id="cb_letters_upper" label="Use Uppercase Letters." checked><label>Lowercase</label><input type="checkbox" id="cb_letters_lower" label="Use Lowercase Letters." checked><td>                    
+                    <td><label>Uppercase</label><input type="checkbox" id="cb_letters_upper" label="Use Uppercase Letters." checked><label>Lowercase</label><input type="checkbox" id="cb_letters_lower" label="Use Lowercase Letters." checked><td>
                 </tr>
                 <!-- Numbers -->
                 <tr>
                     <td><input type="checkbox" id="cb_Numbers" label="Use Numbers."></td>
                     <td><label for="cb_numbers">Numbers</label></td>
                     <td><label>Use numbers 0-9</label></td>
-                    <td></td>                    
+                    <td></td>
                 </tr>
                 <!-- Special Charecters -->
                 <tr>
                     <td><input type="checkbox" id="cb_special" label="Use Special Charecters."></td>
                     <td><label for="cb_special">Special Charecters</label></td>
                     <td><label>Use Special Characters</label><br><label>!@#$%^&*()-_=+[]{}\|<>,./?</label></td>
-                    <td></td>                    
+                    <td></td>
                 </tr>
                 <!-- Nuimber of Charecter -->
                 <tr>
                     <td></td>
                     <td><label> Number of Charecters </label></td>
                     <td></td>
-                    <td><input id="input_char_number" type="number" placeholder="16" max="255" min="1"></td>                    
+                    <td><input id="input_char_number" type="number" placeholder="16" max="255" min="1"></td>
                 </tr>
                 <!-- Custom Character Set -->
                 <tr>
                     <td><input type="checkbox" id="cb_exclude" label="Exclude these sets"></td>
                     <td><label for="cb_exclude">Exclude</label></td>
                     <td><label>Exclude sets of charecters. Comma seperated</label></td>
-                    <td><input id="input_exclude" type="text" placeholder="a,A,fo0,b4R" max="255" min="1"></td>                    
+                    <td><input id="input_exclude" type="text" placeholder="a,A,fo0,b4R" max="255" min="1"></td>
                 </tr>
             </table>
         </div>
