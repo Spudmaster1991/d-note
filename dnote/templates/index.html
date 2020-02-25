@@ -30,9 +30,9 @@
     <h1>Self destructing encrypted notes</h1>
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
     <!-- Generate Password Button -->
-    <button id="btn_generate_pass" onclick="generate_pass()">Generate Password TEST</button>
+    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_pass()">Generate Password TEST</button>
     <!-- Passwrod Setting Toggle -->
-    <button id="btn_pass_settings_toggle" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
+    <button id="btn_pass_settings_toggle" class="btn btn-success" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
     <div id="pass_settings" style="display: none;">
         <table>
             <!-- Headers -->
@@ -140,14 +140,14 @@
             <br/>
             <input id="passphrase" type="text" name="pass" id="passphrase">
             <!-- Generate the passphrase -->
-            <input type="button" value="Generate One" onclick="document.getElementById('passphrase').value = make_key()">
+            <input type="button" class="btn btn-success" value="Generate One" onclick="document.getElementById('passphrase').value = make_key()">
         </div>
         <!-- Dont be a scammer -->
         <div class="blocklast">
             <input type="hidden" id="hashcash" name="hashcash">
             <!-- Submit Note Button -->
             <div id="submitButnHolder">
-                <input type="submit" id="submit" value="Submit Note">
+                <input type="submit" class="btn btn-success" id="submit" value="Submit Note">
             </div>
             <span id="progress">(Please be patient)</span>
             <span class="tooltip">
