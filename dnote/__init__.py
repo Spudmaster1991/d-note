@@ -3,7 +3,7 @@ import os
 import utils
 from flask import Flask, render_template, request, redirect, url_for
 from note import Note
-import password_api.py
+import password_api
 
 DNOTE = Flask(__name__)
 HERE = DNOTE.root_path
