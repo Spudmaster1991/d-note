@@ -9,6 +9,16 @@
     <script type="application/javascript">var fingerprint = new Fingerprint().get();</script>
 {% endblock %}
 {% block content %}
+<script>
+    function toggle_pass_settings() {
+        var x = document.getElementById("pass_settings");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+    }
+</script>
 <head>
     <title>Flask app</title>
     <link rel="stylesheet" href="{{ C:\Users\Anthony\Documents\GitHub\d-note\dnote('static', filename='css/main.css') }}">
@@ -30,6 +40,8 @@
         <!-- Start of Input Box -->
         <input name="new_url" type="hidden" value="{{ random }}">
         <p>Type or paste your text below:</p>
+        <button id="btn_generate_pass" onclick="generate_pass()">Generate Password</button>
+        <button id="btn_pass_settings_toggle" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
         <!-- The actual input box -->
         <textarea style="width:100%; height:250px" id="paste" name="paste"></textarea>
         <br/>
@@ -58,7 +70,8 @@
             </span>
         </div>
         <!-- Table for passwrod generation options -->
-        <div>
+
+        <div id="pass_settings">
             <table>
                 <!-- Headers -->
                 <tr>
