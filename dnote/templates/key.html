@@ -1,6 +1,46 @@
 {% extends "base.html" %}
 {% block title %}Key submission{% endblock %}
 {% block content %}
+    <!-- Start copy -->
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="height:auto"><img src="{{ url_for('index') }}static/img/UVUHorizontalWhite-0011.png"></a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+</div>
+
+
+<style type="text/css">
+.ui-autocomplete {
+  max-height: 110px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+  height: 110px;
+}
+.ui-menu {
+  z-index: 1000 !important;
+  white-space: nowrap;
+}
+</style>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!--Stop Copy-->
     <h1>Enter Passphrase</h1>
     <p>Please provide your private passphrase, so I can decrypt the note for you:</p>
     <form method="POST" action="{{ random }}">
