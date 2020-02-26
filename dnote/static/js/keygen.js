@@ -139,9 +139,8 @@ function make_key() {
   return key;
 }
 
-function generate_password(cb_custom) {
+function generate_password(cb_custom, cb_wordlist, cb_seperators, cb_customchars, cb_numbers, cb_special, cb_exclude, cb_letters, cb_char_number) {
   console.log(cb_custom);
-  cb_custom ? console.log(document.getElementById("input_custom").value) : console.log("Not checked")
   var custom = null;
   var wordlist = null;
   var seperators = null;
@@ -149,35 +148,17 @@ function generate_password(cb_custom) {
   var numbers = null;
   var specialChar = null;
   var exclude = null;
-  var charNumb = null;
+  var charNumber = null;
+  cb_custom ? custom = document.getElementById("input_custom").value; : console.log("Not checked");
+  cb_wordlist ? wordlist = document.getElementById("input_wordlist").value; : console.log("Not checked");
+  cb_seperators ? seperators = document.getElementById("input_seperators").value; : console.log("Not checked");
+  cb_customchars ? customChar = document.getElementById("input_customchars").value; : console.log("Not checked");
+  cb_numbers ? numbers = true; : console.log("Not checked");
+  cb_special ? specialChar = true; : console.log("Not checked");
+  cb_exclude ? exclude = document.getElementById("input_exclude").value; : console.log("Not checked");
+  cb_letters ? letters = true; : console.log("Not checked");
+  cb_char_number ? charNumber = document.getElementById("input_char_number").value; : console.log("Not checked");
 
-  // if (document.getElementById("cb_custom").checked == true) {
-  //   custom = document.getElementById("input_custom").value;
-  // }
-  // if (document.getElementById("cb_wordlist").checked == true) {
-  //   wordlist = document.getElementById("input_wordlist").value;
-  // }
-  // if (document.getElementById("cb_seperators").checked == true) {
-  //   seperators = document.getElementById("input_seperators").value;
-  // }
-  // if (document.getElementById("cb_customchars").checked == true) {
-  //   customChar = document.getElementById("input_customchars").value;
-  // }
-  // if (document.getElementById("cb_numbers").checked == true) {
-  //   numbers = true;
-  // }
-  // if (document.getElementById("cb_special").checked == true) {
-  //   specialChar = true;
-  // }
-  // if (document.getElementById("cb_exclude").checked == true) {
-  //   exclude = document.getElementById("input_exclude").value;
-  // }
-  // if (document.getElementById("cb_letters").checked == true) {
-  //   letters = true
-  // }
-  // if (document.getElementById("input_char_number").value != null){
-  //   charNumb = document.getElementById("input_char_number").value
-  // }
   var api_url = "https://secrets.uvu.edu/api/?" +
     custom != null ? "custom=" + custom + "&": "custom=&" +
     wordlist != null ? "wordlist=" + wordlist + "&": "wordlist=&" +
@@ -187,7 +168,7 @@ function generate_password(cb_custom) {
     specialChar == true ? "specialChar=true&": "specialChar=False&" +
     exclude != null ? "exclude=" + exclude : "exclude=&" +
     letters == true ? "letters=true" : "letters=False&"
-    charNumber != null ? "charNumb=" + charNumber  : "charNumb=16"
+    charNumber != null ? "charNumber=" + charNumber  : "charNumber=16"
   $.get(api_url, function(data){
     document.getElementById("paste").value = document.getElementById("paste").value + data;
   });
