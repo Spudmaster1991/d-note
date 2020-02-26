@@ -147,6 +147,7 @@ function generate_password(cb_custom, cb_wordlist, cb_seperators, cb_customchars
   var numbers = null;
   var specialChar = null;
   var exclude = null;
+  var letters = null;
   var charNumber = null;
   cb_custom ? custom = document.getElementById("input_custom").value : null
   cb_wordlist ? wordlist = document.getElementById("input_wordlist").value : null
