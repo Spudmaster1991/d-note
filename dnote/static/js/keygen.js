@@ -167,7 +167,8 @@ function generate_password(cb_custom, cb_wordlist, cb_seperators, cb_customchars
     specialChar == true ? "specialChar=true&": "specialChar=False&" +
     exclude != null ? "exclude=" + exclude : "exclude=&" +
     letters == true ? "letters=true" : "letters=False&"
-    charNumber != null ? "charNumber=" + charNumber  : "charNumber=16"
+    charNumber != null ? "charNumber=" + charNumber  : "charNumber=16";
+  console.log(api_url);
   $.get(api_url, function(data){
     document.getElementById("paste").value = document.getElementById("paste").value + data;
   });
