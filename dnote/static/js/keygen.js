@@ -149,15 +149,15 @@ function generate_password(cb_custom, cb_wordlist, cb_seperators, cb_customchars
   var specialChar = null;
   var exclude = null;
   var charNumber = null;
-  cb_custom ? custom = document.getElementById("input_custom").value; : console.log("Not checked");
-  cb_wordlist ? wordlist = document.getElementById("input_wordlist").value; : console.log("Not checked");
-  cb_seperators ? seperators = document.getElementById("input_seperators").value; : console.log("Not checked");
-  cb_customchars ? customChar = document.getElementById("input_customchars").value; : console.log("Not checked");
-  cb_numbers ? numbers = true; : console.log("Not checked");
-  cb_special ? specialChar = true; : console.log("Not checked");
-  cb_exclude ? exclude = document.getElementById("input_exclude").value; : console.log("Not checked");
-  cb_letters ? letters = true; : console.log("Not checked");
-  cb_char_number ? charNumber = document.getElementById("input_char_number").value; : console.log("Not checked");
+  cb_custom ? custom = document.getElementById("input_custom").value : console.log("Not checked")
+  cb_wordlist ? wordlist = document.getElementById("input_wordlist").value : console.log("Not checked")
+  cb_seperators ? seperators = document.getElementById("input_seperators").value : console.log("Not checked")
+  cb_customchars ? customChar = document.getElementById("input_customchars").value : console.log("Not checked")
+  cb_numbers ? numbers = true : console.log("Not checked")
+  cb_special ? specialChar = true : console.log("Not checked")
+  cb_exclude ? exclude = document.getElementById("input_exclude").value : console.log("Not checked")
+  cb_letters ? letters = true : console.log("Not checked")
+  cb_char_number ? charNumber = document.getElementById("input_char_number").value : console.log("Not checked")
 
   var api_url = "https://secrets.uvu.edu/api/?" +
     custom != null ? "custom=" + custom + "&": "custom=&" +
