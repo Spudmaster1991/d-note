@@ -25,9 +25,8 @@ def api():
     specialChar = request.args.get('specialChar')
     exclude = request.args.get('exclude')
     letters = request.args.get('letters')
-    charNumb = request.args.get('charNumber')
-    #return password_api.generatepass(custom, wordlist, seperators, customChar, numbers, specialChar, exclude, letters, charNumber)
-    return "test"
+    charNumber = request.args.get('charNumber')
+    return password_api.generatepass(custom, wordlist, seperators, customChar, numbers, specialChar, exclude, letters, charNumber)
 
 @DNOTE.route('/security/', methods=['GET'])
 def security():
