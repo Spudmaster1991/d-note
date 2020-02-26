@@ -148,15 +148,15 @@ function generate_password(cb_custom, cb_wordlist, cb_seperators, cb_customchars
   var specialChar = null;
   var exclude = null;
   var charNumber = null;
-  cb_custom ? custom = document.getElementById("input_custom").value
-  cb_wordlist ? wordlist = document.getElementById("input_wordlist").value
-  cb_seperators ? seperators = document.getElementById("input_seperators").value
-  cb_customchars ? customChar = document.getElementById("input_customchars").value
-  cb_numbers ? numbers = true
-  cb_special ? specialChar = true
-  cb_exclude ? exclude = document.getElementById("input_exclude").value
-  cb_letters ? letters = true
-  cb_char_number ? charNumber = document.getElementById("input_char_number").value
+  cb_custom ? custom = document.getElementById("input_custom").value : null
+  cb_wordlist ? wordlist = document.getElementById("input_wordlist").value : null
+  cb_seperators ? seperators = document.getElementById("input_seperators").value : null
+  cb_customchars ? customChar = document.getElementById("input_customchars").value : null
+  cb_numbers ? numbers = true : null
+  cb_special ? specialChar = true : null
+  cb_exclude ? exclude = document.getElementById("input_exclude").value : null
+  cb_letters ? letters = true : null
+  cb_char_number ? charNumber = document.getElementById("input_char_number").value : null
 
   var api_url = "https://secrets.uvu.edu/api/?" +
     custom != null ? "custom=" + custom + "&": "custom=&" +
