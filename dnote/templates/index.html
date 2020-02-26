@@ -61,7 +61,7 @@
     <h1>Sensitive Information Sharing Tool</h1>
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
     <!-- Generate Password Button -->
-    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_password(document.getElementById('cb_custom').checked)" style="padding: 10px 150px;">Generate Password</button>
+    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_password(document.getElementById('cb_custom').checked, document.getElementById('cb_wordlist').checked, document.getElementById('cb_seperators').checked, document.getElementById('cb_customchars').checked, document.getElementById('cb_letters').checked, document.getElementById('cb_numbers').checked, document.getElementById('cb_special').checked, document.getElementById('cb_char_number').checked)" style="padding: 10px 150px;">Generate Password</button>
     <!-- Password Setting Toggle -->
     <button id="btn_pass_settings_toggle" class="btn btn-success" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
     <div id="pass_settings" style="display: none;">
