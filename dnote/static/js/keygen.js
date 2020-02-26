@@ -158,16 +158,7 @@ function generate_password(cb_custom, cb_wordlist, cb_seperators, cb_customchars
   cb_letters ? letters = true : null
   cb_char_number ? charNumber = document.getElementById("input_char_number").value : null
 
-  var api_url = "https://secrets.uvu.edu/api/?" +
-    custom != null ? "custom=" + custom + "&": "custom=&" +
-    wordlist != null ? "wordlist=" + wordlist + "&": "wordlist=&" +
-    seperators != null ? "seperators=" + seperators + "&": "seperators=&" +
-    customChar != null ? "customChar=" + customChar + "&": "customChar=&" +
-    numbers == true ? "numbers=true&" : "numbers=False&" +
-    specialChar == true ? "specialChar=true&": "specialChar=False&" +
-    exclude != null ? "exclude=" + exclude : "exclude=&" +
-    letters == true ? "letters=true" : "letters=False&"
-    charNumber != null ? "charNumber=" + charNumber  : "charNumber=16";
+  var api_url = "https://secrets.uvu.edu/api/?" + "custom=" + custom + "&wordlist=" + wordlist + "&seperators=" + seperators + "&customChar=" + customChar + "&numbers=" + numbers + "&specialChar=" + specialChar + "&exclude=" + exclude + "&letters=" + letters + "&charNumber=" + charNumber + "&";
   console.log(api_url);
   $.get(api_url, function(data){
     document.getElementById("paste").value = document.getElementById("paste").value + data;
