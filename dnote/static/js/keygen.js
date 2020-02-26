@@ -139,7 +139,7 @@ function make_key() {
   return key;
 }
 
-function gen_pass() {
+function generate_password() {
   var custom = null;
   var wordlist = null;
   var seperators = null;
@@ -149,29 +149,29 @@ function gen_pass() {
   var exclude = null;
   var charNumb = null;
 
-  if (document.getElementById("cb_custom").checked == True) {
+  if (document.getElementById("cb_custom").checked == true) {
     custom = document.getElementById("input_custom").value;
   }
-  if (document.getElementById("cb_wordlist").checked == True) {
+  if (document.getElementById("cb_wordlist").checked == true) {
     wordlist = document.getElementById("input_wordlist").value;
   }
-  if (document.getElementById("cb_seperators").checked == True) {
+  if (document.getElementById("cb_seperators").checked == true) {
     seperators = document.getElementById("input_seperators").value;
   }
-  if (document.getElementById("cb_customchars").checked == True) {
+  if (document.getElementById("cb_customchars").checked == true) {
     customChar = document.getElementById("input_customchars").value;
   }
-  if (document.getElementById("cb_numbers").checked == True) {
-    numbers = True;
+  if (document.getElementById("cb_numbers").checked == true) {
+    numbers = true;
   }
-  if (document.getElementById("cb_special").checked == True) {
-    specialChar = True;
+  if (document.getElementById("cb_special").checked == true) {
+    specialChar = true;
   }
-  if (document.getElementById("cb_exclude").checked == True) {
+  if (document.getElementById("cb_exclude").checked == true) {
     exclude = document.getElementById("input_exclude").value;
   }
-  if (document.getElementById("cb_letters").checked == True) {
-    letters = True
+  if (document.getElementById("cb_letters").checked == true) {
+    letters = true
   }
   if (document.getElementById("input_char_number").value != null){
     charNumb = document.getElementById("input_char_number").value
@@ -181,11 +181,11 @@ function gen_pass() {
     wordlist != null ? "wordlist=" + wordlist + "&": "wordlist=&" +
     seperators != null ? "seperators=" + seperators + "&": "seperators=&" +
     customChar != null ? "customChar=" + customChar + "&": "customChar=&" +
-    numbers == True ? "numbers=True&" : "numbers=False&" +
-    specialChar == True ? "specialChar=True&": "specialChar=False&" +
+    numbers == true ? "numbers=true&" : "numbers=False&" +
+    specialChar == true ? "specialChar=true&": "specialChar=False&" +
     exclude != null ? "exclude=" + exclude : "exclude=&" +
-    letters == True ? "letters=True" : "letters=False&"
-    charNumber != null ? "charNumb=" + charNumber  : "charNumb=16"    
+    letters == true ? "letters=true" : "letters=False&"
+    charNumber != null ? "charNumb=" + charNumber  : "charNumb=16"
   $.get(api_url, function(data){
     document.getElementById("paste").value = document.getElementById("paste").value + data;
   });
