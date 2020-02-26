@@ -149,15 +149,15 @@ function generate_password(cb_custom, cb_wordlist, cb_seperators, cb_customchars
   var exclude = "";
   var letters = "";
   var charNumber = "";
-  if cb_custom custom = document.getElementById("input_custom").value;
-  if cb_wordlist wordlist = document.getElementById("input_wordlist").value;
-  if cb_seperators seperators = document.getElementById("input_seperators").value;
-  if cb_customchars customChar = document.getElementById("input_customchars").value;
-  if cb_numbers numbers = true;
-  if cb_special specialChar = true;
-  if cb_exclude exclude = document.getElementById("input_exclude").value;
-  if cb_letters letters = true;
-  if cb_char_number charNumber = document.getElementById("input_char_number").value;
+  if (cb_custom) custom = document.getElementById("input_custom").value;
+  if (cb_wordlist) wordlist = document.getElementById("input_wordlist").value;
+  if (cb_seperators) seperators = document.getElementById("input_seperators").value;
+  if (cb_customchars) customChar = document.getElementById("input_customchars").value;
+  if (cb_numbers) numbers = true;
+  if (cb_special) specialChar = true;
+  if (cb_exclude) exclude = document.getElementById("input_exclude").value;
+  if (cb_letters) letters = true;
+  if (cb_char_number) charNumber = document.getElementById("input_char_number").value;
 
   var api_url = "https://secrets.uvu.edu/api/?" + "custom=" + custom + "&wordlist=" + wordlist + "&seperators=" + seperators + "&customChar=" + customChar + "&numbers=" + numbers + "&specialChar=" + specialChar + "&exclude=" + exclude + "&letters=" + letters + "&charNumber=" + charNumber + "&";
   console.log(api_url);
