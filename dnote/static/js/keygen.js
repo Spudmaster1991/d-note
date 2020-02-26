@@ -140,7 +140,8 @@ function make_key() {
 }
 
 function generate_password(cb_custom) {
-  log(cb_custom);
+  console.log(cb_custom);
+  cb_custom ? console.log(document.getElementById("input_custom").value) : console.log("Not checked")
   var custom = null;
   var wordlist = null;
   var seperators = null;
