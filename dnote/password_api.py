@@ -24,10 +24,10 @@ def generatepass(custom, wordlist, seperators, customChar, numbers, specialChar,
             #number
             elif element == "n":
                 password = password + random.choice(string.digits)
-            #Random Charecter
+            #Random Character
             elif element == "r":
                 password = password + random.choice(string.printable)
-            #Special Charecter
+            #Special Character
             elif element == "S":
                 password = password + random.choice(string.punctuation)
             #Upper or Lowercase Letter
