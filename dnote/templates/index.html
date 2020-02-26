@@ -61,7 +61,7 @@
     <h1>Sensitive Information Sharing Tool</h1>
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
     <!-- Generate Password Button -->
-    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_password()" style="padding: 10px 150px;">Generate Password</button>
+    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_password(document.getElementById('cb_custom').checked)" style="padding: 10px 150px;">Generate Password</button>
     <!-- Password Setting Toggle -->
     <button id="btn_pass_settings_toggle" class="btn btn-success" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
     <div id="pass_settings" style="display: none;">
@@ -117,7 +117,7 @@
             </tr>
             <!-- Numbers -->
             <tr>
-                <td><input type="checkbox" id="cb_Numbers" label="Use Numbers."></td>
+                <td><input type="checkbox" id="cb_numbers" label="Use Numbers."></td>
                 <td><label for="cb_numbers">Numbers</label></td>
                 <td><label>Use numbers 0-9</label></td>
                 <td></td>
@@ -131,7 +131,7 @@
             </tr>
             <!-- Number of Characters -->
             <tr>
-                <td></td>
+                <td><input type="checkbox" id="cb_char_number" label="Length of the password."></td>
                 <td><label> Number of Characters </label></td>
                 <td></td>
                 <td><input id="input_char_number" type="number" placeholder="16" max="255" min="1"></td>

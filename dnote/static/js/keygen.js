@@ -139,7 +139,8 @@ function make_key() {
   return key;
 }
 
-function generate_password() {
+function generate_password(cb_custom) {
+  log(cb_custom);
   var custom = null;
   var wordlist = null;
   var seperators = null;
@@ -149,33 +150,33 @@ function generate_password() {
   var exclude = null;
   var charNumb = null;
 
-  if (document.getElementById("cb_custom").checked == true) {
-    custom = document.getElementById("input_custom").value;
-  }
-  if (document.getElementById("cb_wordlist").checked == true) {
-    wordlist = document.getElementById("input_wordlist").value;
-  }
-  if (document.getElementById("cb_seperators").checked == true) {
-    seperators = document.getElementById("input_seperators").value;
-  }
-  if (document.getElementById("cb_customchars").checked == true) {
-    customChar = document.getElementById("input_customchars").value;
-  }
-  if (document.getElementById("cb_numbers").checked == true) {
-    numbers = true;
-  }
-  if (document.getElementById("cb_special").checked == true) {
-    specialChar = true;
-  }
-  if (document.getElementById("cb_exclude").checked == true) {
-    exclude = document.getElementById("input_exclude").value;
-  }
-  if (document.getElementById("cb_letters").checked == true) {
-    letters = true
-  }
-  if (document.getElementById("input_char_number").value != null){
-    charNumb = document.getElementById("input_char_number").value
-  }
+  // if (document.getElementById("cb_custom").checked == true) {
+  //   custom = document.getElementById("input_custom").value;
+  // }
+  // if (document.getElementById("cb_wordlist").checked == true) {
+  //   wordlist = document.getElementById("input_wordlist").value;
+  // }
+  // if (document.getElementById("cb_seperators").checked == true) {
+  //   seperators = document.getElementById("input_seperators").value;
+  // }
+  // if (document.getElementById("cb_customchars").checked == true) {
+  //   customChar = document.getElementById("input_customchars").value;
+  // }
+  // if (document.getElementById("cb_numbers").checked == true) {
+  //   numbers = true;
+  // }
+  // if (document.getElementById("cb_special").checked == true) {
+  //   specialChar = true;
+  // }
+  // if (document.getElementById("cb_exclude").checked == true) {
+  //   exclude = document.getElementById("input_exclude").value;
+  // }
+  // if (document.getElementById("cb_letters").checked == true) {
+  //   letters = true
+  // }
+  // if (document.getElementById("input_char_number").value != null){
+  //   charNumb = document.getElementById("input_char_number").value
+  // }
   var api_url = "https://secrets.uvu.edu/api/?" +
     custom != null ? "custom=" + custom + "&": "custom=&" +
     wordlist != null ? "wordlist=" + wordlist + "&": "wordlist=&" +
