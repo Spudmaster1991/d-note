@@ -1,7 +1,7 @@
 import os
 import random
 import string
-def generatepass(custom, wordlist, seperators, customChar, numbers, specialChar, exclude, letters):
+def generatepass(custom, wordlist, seperators, customChar, numbers, specialChar, exclude, letters, charNumber):
     password = "default"
     # wordlist = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/agwordlist.txt')
     # count = len(open(wordlist).readlines(  ))
