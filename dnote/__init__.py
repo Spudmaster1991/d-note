@@ -18,17 +18,11 @@ def index():
 @DNOTE.route('/api/', methods=['GET'])
 def api():
     custom = request.args.get('custom', None)
-    wordlist = request.args.get('wordlist', None)
-    seperators = request.args.get('seperators', None)
-    customChar = request.args.get('customChar', None)
-    numbers = request.args.get('numbers', None)
-    specialChar = request.args.get('specialChar', None)
     exclude = request.args.get('exclude', None)
-    letters = request.args.get('letters', None)
     charNumber = request.args.get('charNumber', None)
-    if custom == None or wordlist == None or seperators == None or customChar == None or numbers == None or specialChar == None or exclude == None or letters == None or charNumber == None:
+    if custom == None or exclude == None or charNumber == None:
         return "Missing a paramater";
-    return password_api.generatepass(custom, wordlist, seperators, customChar, numbers, specialChar, exclude, letters, charNumber)
+    return password_api.generatepass(custom, exclude, charNumber)
 
 @DNOTE.route('/security/', methods=['GET'])
 def security():
