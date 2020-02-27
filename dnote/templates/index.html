@@ -62,22 +62,20 @@
     <h1>Sensitive Information Sharing Tool</h1>
     <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted, and destroyed immediately after viewing.</p>
     <!-- Generate Password Button -->
-    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_password(document.getElementById('cb_custom').checked, document.getElementById('cb_wordlist').checked, document.getElementById('cb_seperators').checked, document.getElementById('cb_customchars').checked, document.getElementById('cb_letters').checked, document.getElementById('cb_numbers').checked, document.getElementById('cb_special').checked, document.getElementById('cb_char_number').checked)" style="padding: 10px 150px;">Generate Password</button>
+    <button id="btn_generate_pass" class="btn btn-success" onclick="generate_password()" style="padding: 10px 150px;">Generate Password</button>
     <!-- Password Setting Toggle -->
     <button id="btn_pass_settings_toggle" class="btn btn-success" onclick="toggle_pass_settings()">Show/Hide Password Settings</button>
     <div id="pass_settings" style="display: none;">
         <table id="customers">
             <!-- Headers -->
             <tr>
-                <th></th>
                 <th>Option</th>
                 <th>Description</th>
                 <th>Additional</th>
             </tr>
-            <!-- Custom Generation -->
+            <!-- Password Generation Input -->
             <tr>
-                <td><input type="checkbox" id="cb_custom" label="Use custom generation." checked></td>
-                <td><label for="cb_custom">Custom</label></td>
+                <td><label>Password Generation Input</label></td>
                 <td><label>Use custom generation</label>
                     <br> <label>w = Upper or Lowercase Word</label>
                     <br> <label>s = Seperator</label>
@@ -85,62 +83,19 @@
                     <br> <label>r = Random Character</label>
                     <br> <label>S = Special Character</label>
                     <br> <label>L = Upper or Lowercase Letter</label>
+                    <br> <label>a = Alpha Numeric (a-z,A-Z,0-9)</label>
                 </td>
                 <td><input id="input_custom" type="text" placeholder="wnswnswn" max="255" min="1" value="wnswnswn"></td>
             </tr>
-            <!-- Wordlist -->
-            <tr>
-                <td><input type="checkbox" id="cb_wordlist" label="Use a wordlist."></td>
-                <td><label for="cb_wordlist">Wordlist</label></td>
-                <td><label>Use a wordlist</label></td>
-                <td><input id="input_wordlist" type="number" placeholder="How many words?" max="16" min="1"></td>
-            </tr>
-            <!-- Seperators -->
-            <tr>
-                <td><input type="checkbox" id="cb_seperators" label="Use a seperator."></td>
-                <td><label for="cb_seperators">Seperators</label></td>
-                <td><label>Use Seperators (- _ , * + : )</label></td>
-                <td><input id="input_seperators" type="number" placeholder="Separate after how many characters/words" max="255" min="1"></td>
-            </tr>
-            <!-- Custom Character Set -->
-            <tr>
-                <td><input type="checkbox" id="cb_customchars" label="Use a custom character set."></td>
-                <td><label for="cb_customchars">Custom Character Set</label></td>
-                <td><label>Use A Custom Character Set</label></td>
-                <td><input id="input_customchars" type="text" placeholder="AaBbCcDd12345!@#$%" max="94" min="1"></td>
-            </tr>
-            <!-- Letters -->
-            <tr>
-                <td><input type="checkbox" id="cb_letters" label="Use Letters."></td>
-                <td><label for="cb_letters">Letters</label></td>
-                <td><label>Use Letters</label></td>
-                <td><label>Uppercase</label><input type="checkbox" id="cb_letters_upper" label="Use Uppercase Letters." checked><label>Lowercase</label><input type="checkbox" id="cb_letters_lower" label="Use Lowercase Letters." checked></td>
-            </tr>
-            <!-- Numbers -->
-            <tr>
-                <td><input type="checkbox" id="cb_numbers" label="Use Numbers."></td>
-                <td><label for="cb_numbers">Numbers</label></td>
-                <td><label>Use numbers 0-9</label></td>
-                <td></td>
-            </tr>
-            <!-- Special Characters -->
-            <tr>
-                <td><input type="checkbox" id="cb_special" label="Use Special Characters."></td>
-                <td><label for="cb_special">Special Characters</label></td>
-                <td><label>Use Special Characters</label><br><label>!@#$%^&*()-_=+[]{}\|<>,./?</label></td>
-                <td></td>
-            </tr>
             <!-- Number of Characters -->
             <tr>
-                <td><input type="checkbox" id="cb_char_number" label="Length of the password."></td>
                 <td><label> Number of Characters </label></td>
                 <td></td>
                 <td><input id="input_char_number" type="number" placeholder="16" max="255" min="1"></td>
             </tr>
-            <!-- Custom Character Set -->
+            <!-- Exclude Character Set -->
             <tr>
-                <td><input type="checkbox" id="cb_exclude" label="Exclude these sets"></td>
-                <td><label for="cb_exclude">Exclude</label></td>
+                <td><label>Exclude</label></td>
                 <td><label>Exclude sets of characters. Comma seperated</label></td>
                 <td><input id="input_exclude" type="text" placeholder="a,A,fo0,b4R" max="255" min="1"></td>
             </tr>
