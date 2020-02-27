@@ -20,8 +20,15 @@ def api():
     custom = request.args.get('custom', None)
     exclude = request.args.get('exclude', None)
     charNumber = request.args.get('charNumber', None)
-    if custom == None or exclude == None or charNumber == None:
-        return "Missing a paramater";
+    error = "Missing GET paramaters: "
+    if custom == None:
+        error = error + 'custom '
+    if exclude == None:
+        error = error + 'exclude '
+    if charNumber == None:
+        error = error + 'charNumber'
+    if error != "Missing GET paramaters: ":
+        return error;
     return password_api.generatepass(custom, exclude, charNumber)
 
 @DNOTE.route('/security/', methods=['GET'])
