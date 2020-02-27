@@ -27,7 +27,7 @@ def api():
     letters = request.args.get('letters', None)
     charNumber = request.args.get('charNumber', None)
     if custom == None or wordlist == None or seperators == None or customChar == None or numbers == None or specialChar == None or exclude == None or letters == None or charNumber == None:
-        return "";
+        return "Missing a paramater";
     return password_api.generatepass(custom, wordlist, seperators, customChar, numbers, specialChar, exclude, letters, charNumber)
 
 @DNOTE.route('/security/', methods=['GET'])
