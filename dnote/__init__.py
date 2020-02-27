@@ -22,11 +22,11 @@ def api():
     charNumber = request.args.get('charNumber', None)
     error = "Missing GET paramaters: "
     if custom == None:
-        error =+ 'custom '
+        error = error + 'custom '
     if exclude == None:
-        error =+ 'exclude '
+        error = error + 'exclude '
     if charNumber == None:
-        error =+ 'charNumber'
+        error = error + 'charNumber'
     if error != "Missing GET paramaters: ":
         return error;
     return password_api.generatepass(custom, exclude, charNumber)
