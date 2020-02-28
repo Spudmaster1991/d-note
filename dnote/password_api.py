@@ -6,7 +6,7 @@ import string
 wordlist = open(os.path.join(os.path.dirname(os.path.abspath(
     __file__)), 'static/agwordlist.txt'), 'r').readlines()
 # list of seperators used
-sep = ["-", "_", ",", ".", " "]
+sep = ["-", "_", ",", "."]
 
 def generatepass(custom, exclude, charNumber):
     password = ""
@@ -24,14 +24,11 @@ def generatepass(custom, exclude, charNumber):
                 pass
             finally:
                 # Need to get the char of the operation to perform
-                numRepeat = int(custom[index + 1:end]) - 1
-                count = numRepeat
-                password = str(numRepeat) + ":"
+                numRepeat = int(custom[index + 1:end])
                 # while loop starts at one because one operation happened already
-                for _ in range(numRepeat):
-                    count = count - 1
-                    password = password + " " + str(count)
-                    #password = password + operations(index - 1)
+                while numRepeat > 1:
+                    numRepeat = numRepeat - 1
+                    password = password + operations(custom[index - 1])
         elif element in string.digits:
             pass
         else:
