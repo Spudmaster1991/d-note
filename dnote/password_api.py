@@ -25,6 +25,11 @@ def generatepass(custom, exclude, charNumber):
             finally:
                 # Need to get the char of the operation to perform
                 numRepeat = int(custom[index + 1:end])
+
+                # Set limit how many times it can repeat
+                if numRepeat > 100:
+                    numRepeat = 100
+
                 # while loop starts at one because one operation happened already
                 while numRepeat > 1:
                     numRepeat = numRepeat - 1
