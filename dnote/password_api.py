@@ -8,14 +8,16 @@ def generatepass(custom, exclude, charNumber):
 
     #list of seperators used
     sep = ["-","_",",","."," "]
+    previousChar = ''
 
     for element in custom:
+        previousChar = element
         #upper or lowercase word
         if element == "w":
             if not getrandbits(1):
-                word = string.capitalize(wordlist[random.randint(0, len(wordlist) - 1)].splitlines()[0])
+                word = string.capitalize(wordlist[random.randint(0, len(wordlist) - 1)].strip())
             else:
-                word = string.lower(wordlist[random.randint(0, len(wordlist) - 1)].splitlines()[0])
+                word = string.lower(wordlist[random.randint(0, len(wordlist) - 1)].strip())
             password = password + word
         #Seperator
         elif element == "s":
