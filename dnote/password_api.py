@@ -23,10 +23,10 @@ def generatepass(custom, exclude, charNumber):
             except:
                 pass
             finally:
-                numRepeat = int(custom[index + 1:end])
-                return str(numRepeat)
                 # Need to get the char of the operation to perform
-                while numRepeat > 0:
+                numRepeat = int(custom[index + 1:end])
+                # while loop starts at one because one operation happened already
+                while numRepeat > 1:
                     numRepeat = numRepeat - 1
                     password = password + operations(index - 1)
         elif element in string.digits:
