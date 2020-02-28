@@ -20,11 +20,14 @@ def generatepass(custom, exclude, charNumber):
             try:
                 while custom[end] in string.digits:
                     end = end + 1
-            numRepeat = int(custom[index + 1:end])
-            # Need to get the char of the operation to perform
-            while numRepeat > 0:
-                numRepeat = numRepeat - 1
-                password = password + operations(index - 1)
+            except:
+                pass
+            finally:
+                numRepeat = int(custom[index + 1:end])
+                # Need to get the char of the operation to perform
+                while numRepeat > 0:
+                    numRepeat = numRepeat - 1
+                    password = password + operations(index - 1)
         elif element in string.digits:
             pass
         else:
