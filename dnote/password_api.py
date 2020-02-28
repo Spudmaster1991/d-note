@@ -13,9 +13,9 @@ def generatepass(custom, exclude, charNumber):
         #upper or lowercase word
         if element == "w":
             if not getrandbits(1):
-                word = string.capitalize(wordlist[random.randint(0, len(wordlist) - 1)].splitlines())
+                word = string.capitalize(wordlist[random.randint(0, len(wordlist) - 1)].splitlines()[0])
             else:
-                word = string.lower(wordlist[random.randint(0, len(wordlist) - 1)].splitlines())
+                word = string.lower(wordlist[random.randint(0, len(wordlist) - 1)].splitlines()[0])
             password = password + word
         #Seperator
         elif element == "s":
