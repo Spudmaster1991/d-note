@@ -16,14 +16,14 @@ def generatepass(custom, exclude, charNumber):
     for index, element in enumerate(custom):
         if element == "*":
             # Need to get the number after the star
-            end = index
+            end = index + 1
             try:
                 while custom[end] in string.digits:
                     end = end + 1
             except:
                 pass
             finally:
-                return custom[index + 1:end];
+                return custom[index:end];
                 numRepeat = int(0)
                 # Need to get the char of the operation to perform
                 while numRepeat > 0:
