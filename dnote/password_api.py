@@ -23,7 +23,8 @@ def generatepass(custom, exclude, charNumber):
             except:
                 pass
             finally:
-                numRepeat = int(custom[index + 1:end])
+                return custom[index + 1:end];
+                numRepeat = int(0)
                 # Need to get the char of the operation to perform
                 while numRepeat > 0:
                     numRepeat = numRepeat - 1
