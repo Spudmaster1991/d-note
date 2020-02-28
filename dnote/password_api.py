@@ -1,22 +1,25 @@
 import os
 import random
+from random import getrandbits
 import string
 def generatepass(custom, exclude, charNumber):
     password = ""
     wordlist = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/agwordlist.txt'), 'r').readlines()
-    #for line in wordlist:
 
-    #list of seperators used and selection of seperator
+    #list of seperators used
     sep = ["-","_",",","."," "]
-    sep_used = sep[random.randint(0,len(sep)-1)]
 
     for element in range(0, len(custom)):
         #upper or lowercase word
         if element == "w":
-            password = password + fullwordlist[random.randint(0, count)]
+            if not getrandbits(1):
+                word = string.capitalize(wordlist[random.randint(0, len(wordlist) - 1)])
+            else:
+                word = string.lower(wordlist[random.randint(0, len(wordlist) - 1)])
+            password = password + word
         #Seperator
         elif element == "s":
-            password = password + sep_used
+            password = password + sep[random.randint(0,len(sep) - 1)]
         #number
         elif element == "n":
             password = password + random.choice(string.digits)
@@ -28,6 +31,11 @@ def generatepass(custom, exclude, charNumber):
             password = password + random.choice(string.punctuation)
         #Upper or Lowercase Letter
         elif element == "L":
-            password = password + random.choice(string.ascii_letters)
+            if not getrandbits(1):
+                letter = string.upper(random.choice(string.ascii_letters))
+            else:
+                letter = string.lower(random.choice(string.ascii_letters))
+            password = password + letter
         else: pass
+
     return password
