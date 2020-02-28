@@ -7,6 +7,7 @@ wordlist = open(os.path.join(os.path.dirname(os.path.abspath(
     __file__)), 'static/agwordlist.txt'), 'r').readlines()
 # list of seperators used
 sep = ["-", "_", ",", "."]
+randomSeperator = sep[random.randint(0, len(sep) - 1)]
 
 def generatepass(custom, exclude, charNumber):
     password = ""
@@ -25,6 +26,11 @@ def generatepass(custom, exclude, charNumber):
             finally:
                 # Need to get the char of the operation to perform
                 numRepeat = int(custom[index + 1:end])
+
+                # Set limit how many times it can repeat
+                if numRepeat > 100:
+                    numRepeat = 100
+
                 # while loop starts at one because one operation happened already
                 while numRepeat > 1:
                     numRepeat = numRepeat - 1
@@ -75,7 +81,7 @@ def word():
 
 
 def seperator():
-    return sep[random.randint(0, len(sep) - 1)]
+    return randomSeperator
 
 
 def number():
