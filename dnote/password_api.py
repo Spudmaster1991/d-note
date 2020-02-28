@@ -7,6 +7,7 @@ wordlist = open(os.path.join(os.path.dirname(os.path.abspath(
     __file__)), 'static/agwordlist.txt'), 'r').readlines()
 # list of seperators used
 sep = ["-", "_", ",", "."]
+randomSeperator = sep[random.randint(0, len(sep) - 1)]
 
 def generatepass(custom, exclude, charNumber):
     password = ""
@@ -80,7 +81,7 @@ def word():
 
 
 def seperator():
-    return sep[random.randint(0, len(sep) - 1)]
+    return randomSeperator
 
 
 def number():
