@@ -9,7 +9,7 @@ def generatepass(custom, exclude, charNumber):
     #list of seperators used
     sep = ["-","_",",","."," "]
 
-    for element in range(0, len(custom)):
+    for element in custom:
         #upper or lowercase word
         if element == "w":
             if not getrandbits(1):
