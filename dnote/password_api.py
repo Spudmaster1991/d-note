@@ -27,7 +27,7 @@ def generatepass(custom, exclude, charNumber):
             password = password + random.choice(string.digits)
         #Random Character
         elif element == "r":
-            password = password + random.choice(string.printable)
+            password = password + random.choice(string.ascii_letters + string.digits + string.punctuation)
         #Special Character
         elif element == "S":
             password = password + random.choice(string.punctuation)
