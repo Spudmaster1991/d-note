@@ -44,7 +44,7 @@ def operations(op):
     elif op == "r":
         text = randomChar()
     # Alphanumeric Character
-    elif op == "a"
+    elif op == "a":
         text = alphanumeric()
     # Special Character
     elif op == "S":
