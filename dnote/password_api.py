@@ -5,12 +5,11 @@ import string
 
 wordlist = open(os.path.join(os.path.dirname(os.path.abspath(
     __file__)), 'static/agwordlist.txt'), 'r').readlines()
+# list of seperators used
+sep = ["-", "_", ",", ".", " "]
 
 def generatepass(custom, exclude, charNumber):
     password = ""
-    # list of seperators used
-    sep = ["-", "_", ",", ".", " "]
-
     # number of times to repeat a certain generation method
     numRepeat = 0
 
@@ -59,7 +58,7 @@ def operations(op):
     return text
 
 
-def word(wordlist):
+def word():
     if not getrandbits(1):
         word = string.capitalize(
             wordlist[random.randint(0, len(wordlist) - 1)].strip())
