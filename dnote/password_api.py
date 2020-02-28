@@ -26,6 +26,8 @@ def generatepass(custom, exclude, charNumber):
                 password = password + operations(index - 1)
         elif element in string.digits:
             pass
+        else:
+            password = password + operations(element)
     return password
 
 
