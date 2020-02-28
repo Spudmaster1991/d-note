@@ -25,9 +25,13 @@ def generatepass(custom, exclude, charNumber):
             finally:
                 # Need to get the char of the operation to perform
                 numRepeat = int(custom[index + 1:end]) - 1
+                count = numRepeat
+                password = str(numRepeat) + ":"
                 # while loop starts at one because one operation happened already
                 for _ in range(numRepeat):
-                    password = password + operations(index - 1)
+                    count = count - 1
+                    password = password + " " + str(count)
+                    #password = password + operations(index - 1)
         elif element in string.digits:
             pass
         else:
