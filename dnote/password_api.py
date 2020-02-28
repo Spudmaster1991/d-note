@@ -4,7 +4,7 @@ from random import getrandbits
 import string
 def generatepass(custom, exclude, charNumber):
     password = ""
-    wordlist = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/agwordlist.txt'), 'r').readlines()
+    wordlist = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/agwordlist.txt'), 'r').readlines().splitlines()
 
     #list of seperators used
     sep = ["-","_",",","."," "]
