@@ -23,6 +23,7 @@ def index():
     return render_template('index.html', random=note.url, error=error)
 
 @DNOTE.route('/api/', methods=['GET'])
+@LIMITER.limit("10/second")
 def api():
     custom = request.args.get('custom', None)
     exclude = request.args.get('exclude', None)
