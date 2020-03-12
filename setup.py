@@ -13,7 +13,7 @@ setup(
     version='1.0.1',
     description='d-note is a self-destructing notes web application',
     packages=find_packages(),
-    install_requires=['Flask'],
+    install_requires=['Flask', 'Flask-Limiter'],
     zip_safe=False,
     include_package_data=True,
     license='GPLv3',

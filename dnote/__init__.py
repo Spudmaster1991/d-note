@@ -6,6 +6,11 @@ from note import Note
 import password_api
 
 DNOTE = Flask(__name__)
+LIMITER = Limiter(
+    DNOTE,
+    key_func=get_remote_address,
+    default_limits=["3 per second"]
+)
 HERE = DNOTE.root_path
 
 @DNOTE.route('/', methods=['GET'])
