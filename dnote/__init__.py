@@ -2,6 +2,8 @@
 import os
 import utils
 from flask import Flask, render_template, request, redirect, url_for
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 from note import Note
 import password_api
 
