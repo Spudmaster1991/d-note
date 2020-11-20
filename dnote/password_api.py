@@ -47,7 +47,7 @@ def operations(op):
     # Uppercase word
     if op == "W":
         text = upperWord()
-    elif op == "w"
+    elif op == "w":
         text = lowerWord()
     # Seperator
     elif op == "s":
