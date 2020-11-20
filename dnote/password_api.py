@@ -44,65 +44,66 @@ def generatepass(custom, exclude, charNumber):
 
 def operations(op):
     text = ''
-    # upper or lowercase word
-    if op == "w":
-        text = word()
+    # Uppercase word
+    if op == "W":
+        text = upperWord()
+    elif op == "w"
+        text = lowerWord()
     # Seperator
     elif op == "s":
         text = seperator()
     # number
     elif op == "n":
         text = number()
-    # Random Character
+    # Random character
     elif op == "r":
         text = randomChar()
-    # Alphanumeric Character
+    # Alphanumeric character
     elif op == "a":
         text = alphanumeric()
-    # Special Character
+    # Special character
     elif op == "S":
         text = specialChar()
-    # Upper or Lowercase Letter
+    # Lowercase letter
+    elif op == "l":
+        text = lowerLetter()
+    # Uppercase letter
     elif op == "L":
-        text = letter()
+        text = upperLetter()
     else:
         pass
     return text
 
 
-def word():
-    if not getrandbits(1):
-        word = string.capitalize(
-            wordlist[random.randint(0, len(wordlist) - 1)].strip())
-    else:
-        word = string.lower(
-            wordlist[random.randint(0, len(wordlist) - 1)].strip())
+def upperWord():
+    word = string.capitalize(
+        wordlist[random.randint(0, len(wordlist) - 1)].strip())
     return word
 
+def lowerWord():
+    word = string.lower(
+        wordlist[random.randint(0, len(wordlist) - 1)].strip())
+    return word
 
 def seperator():
     return randomSeperator
 
-
 def number():
     return random.choice(string.digits)
-
 
 def randomChar():
     return random.choice(string.ascii_letters + string.digits + string.punctuation)
 
-
 def alphanumeric():
     return random.choice(string.ascii_letters + string.digits)
-
 
 def specialChar():
     return random.choice(string.punctuation)
 
+def lowerLetter():
+    letter = string.lower(random.choice(string.ascii_letters))
+    return letter
 
-def letter():
-    if not getrandbits(1):
-        letter = string.upper(random.choice(string.ascii_letters))
-    else:
-        letter = string.lower(random.choice(string.ascii_letters))
+def upperLetter():
+    letter = string.upper(random.choice(string.ascii_letters))
     return letter

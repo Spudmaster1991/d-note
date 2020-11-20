@@ -89,17 +89,19 @@ input.addEventListener("keyup", function(event) {
             <tr>
                 <td><label>Password Generation Input</label></td>
                 <td><label>Use custom generation</label>
-                    <br> <label>w = Upper or Lowercase Word</label>
+                    <br> <label>w = Lowercase Word</label>
+                    <br> <label>W = Uppercase Word</label>
                     <br> <label>s = Seperator</label>
                     <br> <label>n = Number</label>
                     <br> <label>r = Random Character</label>
                     <br> <label>S = Special Character</label>
-                    <br> <label>L = Upper or Lowercase Letter</label>
+                    <br> <label>l = Lowercase Letter</label>
+                    <br> <label>L = Uppercase Letter</label>
                     <br> <label>a = Alpha Numeric (a-z,A-Z,0-9)</label>
                     <br> <label><i>Hint: You can use *16 notation to quickly create long passwords.</i></label>
-                    <br><label><i>For example r*10 will generate 10 random characters.</i></label> 
+                    <br><label><i>For example r*10 will generate 10 random characters.</i></label>
                 </td>
-                <td><input id="input_custom" type="text" placeholder="wnswnswn" max="255" min="1" value="wnswnswn"></td>
+                <td><input id="input_custom" type="text" placeholder="WsLaWLLrrSa" max="255" min="1" value="wnswnswn"></td>
             </tr>
             <!-- Number of Characters -->
             <tr>
@@ -107,7 +109,7 @@ input.addEventListener("keyup", function(event) {
                 <td></td>
                 <td><input id="input_char_number" type="number" placeholder="16" max="255" min="1"></td>
             </tr>
-             <!--Exclude Character Set--> 
+             <!--Exclude Character Set-->
             <tr>
                 <td><label>Exclude</label></td>
                 <td><label>Exclude sets of characters. Comma seperated</label></td>
